@@ -1,5 +1,6 @@
 package com.example.layarkita;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -52,13 +53,22 @@ public class HomeFragment extends Fragment {
                     startActivity(intent);
                 },
                 film -> {
-                    if (WatchListHelper.getWatchList().contains(film)){
-                        Toast.makeText(getContext(), "Film ini sudah ada di daftar suka", Toast.LENGTH_SHORT).show();
-                    } else{
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+                    if (WatchListHelper.getWatchList().contains(film)) {
+                        builder.setTitle("Info")
+                                .setMessage("Film ini sudah ada di daftar suka")
+                                .setPositiveButton("OK", null)
+                                .show();
+                    } else {
                         WatchListHelper.addToWatchList(film);
-                        Toast.makeText(getContext(), "Ditambahkan ke daftar suka", Toast.LENGTH_SHORT).show();
+                        builder.setTitle("Berhasil")
+                                .setMessage("Ditambahkan ke daftar suka")
+                                .setPositiveButton("OK", null)
+                                .show();
                     }
                 }
+
         );
 
         recyclerFilm.setAdapter(filmAdapter);
