@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -77,25 +76,5 @@ public class MainActivity extends AppCompatActivity{
         LocalHelper.setLocale(newBase, lang);
         super.attachBaseContext(newBase);
     }
-
-    @Override
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setTitle("Keluar Aplikasi")
-                .setMessage("Apakah kamu yakin ingin keluar dari aplikasi?")
-                .setPositiveButton("Ya", (dialog, which) -> {
-
-                    SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.remove("isLoggedIn");
-                    editor.apply();
-
-                    finishAffinity();
-                })
-                .setNegativeButton("Batal", (dialog, which) -> {
-                })
-                .show();
-    }
-
 
 }
