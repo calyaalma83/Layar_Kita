@@ -5,6 +5,11 @@
     <string name="trending">Sedang Populer</string>
     <string name="home">Beranda</string>
     <string name="profile">Profil</string>
+    <string name="daftar">Daftar</string>
+    <string name="konfirmasi">Konfirmasi Password</string>
+    <string name="password">Kata Sandi</string>
+    <string name="email">Email</string>
+    <string name="nama">Nama Lengkap</string>
     <string name="hello_user">Hai, Pengguna</string>
     <string name="account">👤 Akun Saya</string>
     <string name="notification">🔔 Notifikasi</string>

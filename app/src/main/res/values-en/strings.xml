@@ -6,6 +6,11 @@
     <string name="trending">Trending</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
+    <string name="daftar">Sign Up</string>
+    <string name="konfirmasi">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="nama">Full Name</string>
     <string name="hello_user">Hi, User</string>
     <string name="account">👤 My Account</string>
     <string name="notification">🔔 Notification</string>
