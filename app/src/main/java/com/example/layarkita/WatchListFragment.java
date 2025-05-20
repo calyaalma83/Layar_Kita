@@ -56,14 +56,31 @@ public class WatchListFragment extends Fragment {
                     startActivity(intent);
                 },
                 film -> {
-                    WatchListHelper.removeFromWatchList(film);
-                    Toast.makeText(getContext(), "Dihapus dari daftar suka", Toast.LENGTH_SHORT).show();
+                    new androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                            .setTitle("Konfirmasi")
+                            .setMessage("Yakin ingin menghapus film dari daftar suka?")
+                            .setPositiveButton("Hapus", (dialog, which) -> {
+                                WatchListHelper.removeFromWatchList(film);
 
-                    watchList.clear();
-                    watchList.addAll(WatchListHelper.getWatchList());
-                    adapter.notifyDataSetChanged();
-                }
-        );
+                                watchList.clear();
+                                watchList.addAll(WatchListHelper.getWatchList());
+                                adapter.notifyDataSetChanged();
+
+                                new androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                                        .setTitle("Dihapus")
+                                        .setMessage("Film berhasil dihapus dari daftar suka")
+                                        .setPositiveButton("OK", null)
+                                        .show();
+                            })
+                            .setNegativeButton("Batal", null)
+                            .show();
+                });
+
+
+        watchList.clear();
+        watchList.addAll(WatchListHelper.getWatchList());
+        adapter.notifyDataSetChanged();
+
 
         recyclerWatchList.setAdapter(adapter);
         Log.d("WatchListFragment", "Adapter berhasil di-set");
