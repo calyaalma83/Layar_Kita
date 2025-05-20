@@ -1,6 +1,7 @@
 package com.example.layarkita;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,6 +42,12 @@ public class RegisterActivity extends AppCompatActivity {
                 new Thread(() -> {
                     userDao.insertUser(user);
                     runOnUiThread(() -> {
+
+                        SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putBoolean("isRegistered", true);
+                        editor.apply();
+
                         Toast.makeText(this, "Berhasil mendaftar!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                         startActivity(intent);

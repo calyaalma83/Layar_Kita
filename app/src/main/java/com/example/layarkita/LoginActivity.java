@@ -1,5 +1,6 @@
 package com.example.layarkita;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -15,10 +16,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText editEmail, editPw;
     private AppCompatButton btnLogin;
-    private DatabaseHelper dbHelper;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
@@ -26,22 +26,50 @@ public class LoginActivity extends AppCompatActivity {
         editEmail = findViewById(R.id.editEmail);
         editPw = findViewById(R.id.editPw);
         btnLogin = findViewById(R.id.btnLogin);
-        dbHelper = new DatabaseHelper(this);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = editEmail.getText().toString().trim();
-                String password = editPw.getText().toString().trim();
+        btnLogin.setOnClickListener(view -> {
+            String email = editEmail.getText().toString().trim();
+            String password = editPw.getText().toString().trim();
 
-                if (dbHelper.checkUser(email, password)) {
-                    Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();
-                } else {
-                    Toast.makeText(LoginActivity.this, "Email atau password salah", Toast.LENGTH_SHORT).show();
-                }
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(LoginActivity.this, "Email dan password harus diisi", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            new Thread(() -> {
+                AppDatabase db = AppDatabase.getInstance(LoginActivity.this);
+                UserDao userDao = db.userDao();
+
+                User user = userDao.login(email, password);
+
+                runOnUiThread(() -> {
+                    if (user != null){
+                        Toast.makeText(LoginActivity.this, "Login Berhasil!", Toast.LENGTH_SHORT).show();
+
+                        SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("email", email);
+                        editor.apply();
+
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Email atau password salah!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }).start();
         });
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
+        boolean isLoggedIn = preferences.getBoolean("isLoggedIn", false);
+
+        if (isLoggedIn) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
     }
 }
