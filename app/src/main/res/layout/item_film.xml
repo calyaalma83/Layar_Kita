@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_film_border"
+    android:padding="8dp"
+    android:layout_margin="8dp"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/imagePoster"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:contentDescription="Poster Film" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Judul Film"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingTop="4dp" />
+
+    <ImageView
+        android:id="@+id/buttonAction"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_add"
+        android:contentDescription="Aksi"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="4dp"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
