@@ -1,11 +1,15 @@
 package com.example.layarkita;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -64,4 +68,13 @@ public class MainActivity extends AppCompatActivity{
         adapter.addFragment(new ProfileFragment());
         viewPager.setAdapter(adapter);
     }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences preferences = newBase.getSharedPreferences("settings", Context.MODE_PRIVATE);
+        String lang = preferences.getString("language", "id"); // default bahasa Indonesia
+        LocalHelper.setLocale(newBase, lang);
+        super.attachBaseContext(newBase);
+    }
+
 }

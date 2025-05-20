@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="24dp" >
 
         <ImageView
             android:id="@+id/profileImage"
@@ -24,7 +24,7 @@
             android:id="@+id/profileName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hai, User"
+            android:text="@string/hello_user"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -32,11 +32,11 @@
             android:paddingTop="8dp"
             android:paddingBottom="24dp" />
 
-        <TextView android:id="@+id/tvAkun" style="@style/ProfileItem" android:text="👤 Akun Saya" />
-        <TextView style="@style/ProfileItem" android:text="🔔 Notifikasi" />
-        <TextView style="@style/ProfileItem" android:text="⚙️ Pengaturan" />
-        <TextView style="@style/ProfileItem" android:text="🔐 Keamanan Akun" />
-        <TextView android:id="@+id/tvBahasa" style="@style/ProfileItem" android:text="🌐 Bahasa" />
+        <TextView style="@style/ProfileItem" android:text="@string/account" />
+        <TextView style="@style/ProfileItem" android:text="@string/notification" />
+        <TextView style="@style/ProfileItem" android:text="@string/settings" />
+        <TextView style="@style/ProfileItem" android:text="@string/security" />
+        <TextView android:id="@+id/tvBahasa" style="@style/ProfileItem" android:text="@string/language" />
 
         <View
             android:layout_width="match_parent"
@@ -44,8 +44,8 @@
             android:layout_marginVertical="16dp"
             android:background="@color/white" />
 
-        <TextView android:id="@+id/tvLogout" style="@style/ProfileItem" android:text="🚪 Log Out" />
-        <TextView style="@style/ProfileItem" android:text="➕ Akun Baru" />
+        <TextView style="@style/ProfileItem" android:text="@string/logout" />
+        <TextView style="@style/ProfileItem" android:text="@string/new_account" />
 
     </LinearLayout>
 </ScrollView>

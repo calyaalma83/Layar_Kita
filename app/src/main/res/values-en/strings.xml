@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Layar Kita</string>
+    <string name="watchlist">Watch List</string>
+    <string name="trailer">Watch the Trailer</string>
+    <string name="trending">Trending</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="hello_user">Hi, User</string>
+    <string name="account">👤 My Account</string>
+    <string name="notification">🔔 Notification</string>
+    <string name="settings">⚙️ Settings</string>
+    <string name="security">🔐 Security</string>
+    <string name="language">🌐 Language</string>
+    <string name="logout">🚪 Log Out</string>
+    <string name="new_account">➕ New Account</string>
+</resources>
