@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item android:title="Genre">
+            <menu>
+                <item android:title="Horror"/>
+                <item android:title="Romantis"/>
+                <item android:title="Kisah Hidup"/>
+                <item android:title="Dokumenter"/>
+                <item android:title="Detektif"/>
+                <item android:title="Kriminal"/>
+                <item android:title="Fantasi"/>
+            </menu>
+        </item>
+        <item android:title="Berdasarkan Wilayah">
+            <menu>
+                <item android:title="Asia"/>
+                <item android:title="Amerika"/>
+                <item android:title="Malaysia"/>
+                <item android:title="Korea"/>
+                <item android:title="Jepang"/>
+                <item android:title="Thailand"/>
+            </menu>
+        </item>
+    </group>
+</menu>
