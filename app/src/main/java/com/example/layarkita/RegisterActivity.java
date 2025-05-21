@@ -45,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                         SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("user_name", nama);
                         editor.putBoolean("isRegistered", true);
                         editor.apply();
 

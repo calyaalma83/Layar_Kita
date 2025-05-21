@@ -11,7 +11,7 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="nama">Full Name</string>
-    <string name="hello_user">Hi, User</string>
+    <string name="hello_user">Hi</string>
     <string name="account">👤 My Account</string>
     <string name="notification">🔔 Notification</string>
     <string name="settings">⚙️ Settings</string>

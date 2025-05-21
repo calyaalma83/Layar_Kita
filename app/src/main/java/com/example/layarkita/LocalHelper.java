@@ -9,18 +9,20 @@ import java.util.Locale;
 
 public class LocalHelper {
 
-    public static void setLocale(Context context, String languageCode){
+    public static Context setLocale(Context context, String languageCode){
         Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
 
         Resources resources = context.getResources();
         Configuration config = resources.getConfiguration();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
             config.setLocale(locale);
-            context.createConfigurationContext(config);
+            return context.createConfigurationContext(config);
         } else {
             config.locale = locale;
             resources.updateConfiguration(config, resources.getDisplayMetrics());
+            return context;
         }
     }
 }

@@ -10,7 +10,7 @@
     <string name="password">Kata Sandi</string>
     <string name="email">Email</string>
     <string name="nama">Nama Lengkap</string>
-    <string name="hello_user">Hai, Pengguna</string>
+    <string name="hello_user">Hai</string>
     <string name="account">👤 Akun Saya</string>
     <string name="notification">🔔 Notifikasi</string>
     <string name="settings">⚙️ Pengaturan</string>

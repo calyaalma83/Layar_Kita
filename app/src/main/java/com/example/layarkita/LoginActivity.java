@@ -48,7 +48,9 @@ public class LoginActivity extends AppCompatActivity {
 
                         SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("user_name", user.getNama());
                         editor.putString("email", email);
+                        editor.putBoolean("isLoggedIn", true);
                         editor.apply();
 
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
