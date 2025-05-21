@@ -90,50 +90,37 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleDrawerSelection(@NonNull MenuItem item) {
         String message = "";
+        int id = item.getItemId();
 
-        switch (item.getItemId()) {
-            // Genre
-            case R.id.nav_horror:
-                message = "Genre: Horror";
-                break;
-            case R.id.nav_romantis:
-                message = "Genre: Romantis";
-                break;
-            case R.id.nav_kisah_hidup:
-                message = "Genre: Kisah Hidup";
-                break;
-            case R.id.nav_dokumenter:
-                message = "Genre: Dokumenter";
-                break;
-            case R.id.nav_detektif:
-                message = "Genre: Detektif";
-                break;
-            case R.id.nav_kriminal:
-                message = "Genre: Kriminal";
-                break;
-            case R.id.nav_fantasi:
-                message = "Genre: Fantasi";
-                break;
+        // Genre
+        if (id == R.id.nav_horror) {
+            message = "Genre: Horror";
+        } else if (id == R.id.nav_romantis) {
+            message = "Genre: Romantis";
+        } else if (id == R.id.nav_kisah_hidup) {
+            message = "Genre: Kisah Hidup";
+        } else if (id == R.id.nav_dokumenter) {
+            message = "Genre: Dokumenter";
+        } else if (id == R.id.nav_detektif) {
+            message = "Genre: Detektif";
+        } else if (id == R.id.nav_kriminal) {
+            message = "Genre: Kriminal";
+        } else if (id == R.id.nav_fantasi) {
+            message = "Genre: Fantasi";
 
             // Wilayah
-            case R.id.nav_asia:
-                message = "Wilayah: Asia";
-                break;
-            case R.id.nav_amerika:
-                message = "Wilayah: Amerika";
-                break;
-            case R.id.nav_malaysia:
-                message = "Wilayah: Malaysia";
-                break;
-            case R.id.nav_korea:
-                message = "Wilayah: Korea";
-                break;
-            case R.id.nav_jepang:
-                message = "Wilayah: Jepang";
-                break;
-            case R.id.nav_thailand:
-                message = "Wilayah: Thailand";
-                break;
+        } else if (id == R.id.nav_asia) {
+            message = "Wilayah: Asia";
+        } else if (id == R.id.nav_amerika) {
+            message = "Wilayah: Amerika";
+        } else if (id == R.id.nav_malaysia) {
+            message = "Wilayah: Malaysia";
+        } else if (id == R.id.nav_korea) {
+            message = "Wilayah: Korea";
+        } else if (id == R.id.nav_jepang) {
+            message = "Wilayah: Jepang";
+        } else if (id == R.id.nav_thailand) {
+            message = "Wilayah: Thailand";
         }
 
         if (!message.isEmpty()) {
