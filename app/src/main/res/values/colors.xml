@@ -4,11 +4,8 @@
     <color name="white">#FFF6F6</color>
     <color name="red">#8A2D3B</color>
     <color name="maroon">#3A0519</color>
-<<<<<<< HEAD
     <color name="gray">#AAAAAA</color>
-=======
     <color name="red2">#C51F1A</color>
     <color name="abu">#AAAAAA</color>
->>>>>>> 856058ada5dacc0908343cf9a84daaeae3c73cb5
     <color name="kuning">#FBDB93</color>
 </resources>
