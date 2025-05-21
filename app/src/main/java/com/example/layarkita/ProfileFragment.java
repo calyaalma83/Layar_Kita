@@ -41,8 +41,8 @@ public class  ProfileFragment extends Fragment{
     }
 
     private void showLanguageDialog(){
-        final String[] languages = {"Bahasa Indonesia", "English", "Deutsch"};
-        final String[] languageCodes = {"id", "en", "de"};
+        final String[] languages = {"Bahasa Indonesia", "English"};
+        final String[] languageCodes = {"id", "en"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Pilih Bahasa")
