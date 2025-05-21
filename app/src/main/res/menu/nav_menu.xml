@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+        <item android:title="Genre" />
+        <item android:id="@+id/nav_horror" android:title="• Horror" />
+        <item android:id="@+id/nav_romantis" android:title="• Romantis" />
+        <item android:id="@+id/nav_kisah_hidup" android:title="• Kisah Hidup" />
+        <item android:id="@+id/nav_dokumenter" android:title="• Dokumenter" />
+        <item android:id="@+id/nav_detektif" android:title="• Detektif" />
+        <item android:id="@+id/nav_kriminal" android:title="• Kriminal" />
+        <item android:id="@+id/nav_fantasi" android:title="• Fantasi" />
+
+        <item android:title="Berdasarkan Wilayah" />
+        <item android:id="@+id/nav_asia" android:title="• Asia" />
+        <item android:id="@+id/nav_amerika" android:title="• Amerika" />
+        <item android:id="@+id/nav_malaysia" android:title="• Malaysia" />
+        <item android:id="@+id/nav_korea" android:title="• Korea" />
+        <item android:id="@+id/nav_jepang" android:title="• Jepang" />
+        <item android:id="@+id/nav_thailand" android:title="• Thailand" />
+    </group>
+</menu>

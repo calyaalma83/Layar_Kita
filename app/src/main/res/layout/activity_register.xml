@@ -31,7 +31,8 @@
             android:background="@drawable/edit_text_bg"
             android:paddingHorizontal="16dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/abu"
+            android:textColorHint="@color/gray"
+            android:inputType="textPersonName"
             android:layout_marginBottom="16dp" />
 
         <EditText
@@ -42,7 +43,7 @@
             android:background="@drawable/edit_text_bg"
             android:paddingHorizontal="16dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/abu"
+            android:textColorHint="@color/gray"
             android:inputType="textEmailAddress"
             android:layout_marginBottom="16dp" />
 
@@ -54,7 +55,7 @@
             android:background="@drawable/edit_text_bg"
             android:paddingHorizontal="16dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/abu"
+            android:textColorHint="@color/gray"
             android:inputType="textPassword"
             android:layout_marginBottom="16dp" />
 
@@ -66,7 +67,7 @@
             android:background="@drawable/edit_text_bg"
             android:paddingHorizontal="16dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/abu"
+            android:textColorHint="@color/gray"
             android:inputType="textPassword"
             android:layout_marginBottom="24dp" />
 
