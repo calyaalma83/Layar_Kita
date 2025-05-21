@@ -52,7 +52,9 @@ public class WatchListFragment extends Fragment {
                     Intent intent = new Intent(getContext(), DetailActivity.class);
                     intent.putExtra("title", film.getTitle());
                     intent.putExtra("image", film.getPosterResId());
-                    intent.putExtra("desc", film.getDescription());
+                    intent.putExtra("desc", film.getDescription_id());
+                    intent.putExtra("desc", film.getDescription_en());
+                    intent.putExtra("desc", film.getDescription_de());
                     startActivity(intent);
                 },
                 film -> {
