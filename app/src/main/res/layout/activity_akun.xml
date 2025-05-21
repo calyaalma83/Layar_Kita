@@ -98,6 +98,16 @@
                     android:text="Pasang foto yang oke! Semua orang bakal bisa lihat."
                     android:textColor="@color/white"
                     android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtChangePhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Change"
+                    android:textColor="@color/red2"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
             </LinearLayout>
         </LinearLayout>
 
