@@ -1,26 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@color/black"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WatchListFragment">
+    android:background="@color/maroon">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Layar Kita"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="35sp"
+        android:textColor="@color/kuning"
+        android:gravity="right"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="20dp"/>
+
+    <!-- Search Bar -->
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="1000dp"
+        android:layout_height="60dp"
+        android:layout_weight="10"
+        android:backgroundTint="@color/abu"
+        android:hint="Search Movie"
+        android:padding="10dp"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawablePadding="8dp"
+        android:textColor="#000"
+        android:textColorHint="#999" />
+
+    <!-- Trending Movies Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sedang Trending"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="140dp"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="180dp">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/final_destination" />
+
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bukitduri" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/komang" />
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/trending"
-        android:layout_margin="16dp"
-        android:textSize="24sp"
-        android:textColor="@color/red"
-        android:textStyle="bold" />
+        android:text="Berdasarkan film yang kamu suka"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="380dp"
+        android:textColor="@color/white" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerFilm"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        tools:listitem="@layout/item_film" />
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="420dp">
 
-</LinearLayout>
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/conjuring" />
+
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/homesweetloan" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/keluargacemara" />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        app:itemIconTint="@color/red"
+        app:itemTextColor="@color/red"
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/maroon"
+        app:itemIconSize="24dp"
+        app:itemHorizontalTranslationEnabled="false"
+        app:labelVisibilityMode="labeled"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:background="@color/white" />
+
+</RelativeLayout>
