@@ -3,33 +3,62 @@ package com.example.layarkita;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.MenuItem;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private ViewPager2 viewPager;
+    private BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inisialisasi komponen
         viewPager = findViewById(R.id.viewPager);
+        bottomNav = findViewById(R.id.bottom_nav);
+
         setupViewPager();
+
+        bottomNav.setOnItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.nav_home){
+                viewPager.setCurrentItem(0);
+                return true;
+            } else if (itemId == R.id.nav_bookmark){
+                viewPager.setCurrentItem(1);
+                return true;
+            } else if (itemId == R.id.nav_profile){
+                viewPager.setCurrentItem(2);
+                return true;
+            }
+
+            return false;
+        });
+
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    case 0:
+                        bottomNav.setSelectedItemId(R.id.nav_home);
+                        break;
+                    case 1:
+                        bottomNav.setSelectedItemId(R.id.nav_bookmark);
+                        break;
+                    case 2:
+                        bottomNav.setSelectedItemId(R.id.nav_profile);
+                        break;
+                }
+            }
+        });
     }
 
     private void setupViewPager() {
@@ -47,4 +76,5 @@ public class MainActivity extends AppCompatActivity {
         LocalHelper.setLocale(newBase, lang);
         super.attachBaseContext(newBase);
     }
+
 }

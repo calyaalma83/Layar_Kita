@@ -20,6 +20,8 @@
             android:src="@drawable/ic_back"
             android:contentDescription="Kembali" />
 
+    </LinearLayout>
+
         <!-- Spacer -->
         <Space
             android:layout_width="match_parent"
@@ -40,45 +42,54 @@
                 android:scaleType="centerCrop"
                 android:contentDescription="Foto Profil"
                 app:tint="@color/abu" />
-        </LinearLayout>
 
-        <!-- Spacer -->
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="32dp" />
+            <!-- Kolom Gambar -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="16dp">
 
-        <!-- Nama -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nama"
-            android:textColor="@color/white" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Foto Profil"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="4dp" />
 
-        <TextView
-            android:id="@+id/tvNama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:paddingVertical="8dp" />
+                <ImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_profile"
+                    android:contentDescription="Foto Profil"
+                    app:tint="@color/abu" />
+            </LinearLayout>
 
-        <!-- Email -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textColor="@color/white"
-            android:layout_marginTop="16dp" />
+            <!-- Kolom Keterangan dan Tombol Ubah -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:paddingVertical="8dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pasang foto yang oke! Semua orang bakal bisa lihat."
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp" />
 
+                <TextView
+                    android:id="@+id/txtChangePhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Change"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
     </LinearLayout>
 </ScrollView>
