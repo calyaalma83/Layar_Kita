@@ -59,6 +59,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:hint="Enter Password"
+            android:inputType="textPassword"
             android:padding="10dp"
             android:background="@color/abu" />
 

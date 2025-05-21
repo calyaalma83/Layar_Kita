@@ -66,12 +66,14 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-        SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
-        boolean isLoggedIn = preferences.getBoolean("isLoggedIn", false);
+    }
 
-        if (isLoggedIn) {
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-        }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("isLoggedIn", false); // Reset agar login dibutuhkan ulang
+        editor.apply();
     }
 }
