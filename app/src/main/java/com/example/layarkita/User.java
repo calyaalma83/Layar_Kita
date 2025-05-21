@@ -1,7 +1,5 @@
 package com.example.layarkita;
 
-import android.text.SpannableString;
-
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
