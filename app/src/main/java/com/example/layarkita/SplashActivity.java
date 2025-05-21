@@ -12,12 +12,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstancestate);
 
         SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
-        boolean isLoggedIn = preferences.getBoolean("isLoggedIn", false);
         boolean isRegistered = preferences.getBoolean("isRegistered", false);
 
-        if (isLoggedIn){
-            startActivity(new Intent(this, MainActivity.class));
-        } else if (!isRegistered){
+        if (!isRegistered){
             startActivity(new Intent(this, RegisterActivity.class));
         } else {
             startActivity(new Intent(this, LoginActivity.class));
