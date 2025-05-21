@@ -21,9 +21,6 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
-    private BottomNavigationView bottomNav;
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,52 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Inisialisasi komponen
         viewPager = findViewById(R.id.viewPager);
-        bottomNav = findViewById(R.id.bottom_nav);
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.navigation_view);
-
         setupViewPager();
-
-        // Handle Bottom Nav
-        bottomNav.setOnItemSelectedListener(item -> {
-            int itemId = item.getItemId();
-            if (itemId == R.id.nav_home) {
-                viewPager.setCurrentItem(0);
-                return true;
-            } else if (itemId == R.id.nav_bookmark) {
-                viewPager.setCurrentItem(1);
-                return true;
-            } else if (itemId == R.id.nav_profile) {
-                viewPager.setCurrentItem(2);
-                return true;
-            }
-            return false;
-        });
-
-        // Sinkronisasi perubahan halaman dengan Bottom Nav
-        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                switch (position) {
-                    case 0:
-                        bottomNav.setSelectedItemId(R.id.nav_home);
-                        break;
-                    case 1:
-                        bottomNav.setSelectedItemId(R.id.nav_bookmark);
-                        break;
-                    case 2:
-                        bottomNav.setSelectedItemId(R.id.nav_profile);
-                        break;
-                }
-            }
-        });
-
-        // Handle klik pada Navigation Drawer (Sidebar)
-        navigationView.setNavigationItemSelectedListener(item -> {
-            handleDrawerSelection(item);
-            drawerLayout.closeDrawer(GravityCompat.END); // Tutup drawer setelah klik
-            return true;
-        });
     }
 
     private void setupViewPager() {
