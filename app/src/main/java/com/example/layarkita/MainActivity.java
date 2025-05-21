@@ -88,46 +88,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    private void handleDrawerSelection(@NonNull MenuItem item) {
-        String message = "";
-        int id = item.getItemId();
-
-        // Genre
-        if (id == R.id.nav_horror) {
-            message = "Genre: Horror";
-        } else if (id == R.id.nav_romantis) {
-            message = "Genre: Romantis";
-        } else if (id == R.id.nav_kisah_hidup) {
-            message = "Genre: Kisah Hidup";
-        } else if (id == R.id.nav_dokumenter) {
-            message = "Genre: Dokumenter";
-        } else if (id == R.id.nav_detektif) {
-            message = "Genre: Detektif";
-        } else if (id == R.id.nav_kriminal) {
-            message = "Genre: Kriminal";
-        } else if (id == R.id.nav_fantasi) {
-            message = "Genre: Fantasi";
-
-            // Wilayah
-        } else if (id == R.id.nav_asia) {
-            message = "Wilayah: Asia";
-        } else if (id == R.id.nav_amerika) {
-            message = "Wilayah: Amerika";
-        } else if (id == R.id.nav_malaysia) {
-            message = "Wilayah: Malaysia";
-        } else if (id == R.id.nav_korea) {
-            message = "Wilayah: Korea";
-        } else if (id == R.id.nav_jepang) {
-            message = "Wilayah: Jepang";
-        } else if (id == R.id.nav_thailand) {
-            message = "Wilayah: Thailand";
-        }
-
-        if (!message.isEmpty()) {
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        }
-    }
-
     @Override
     protected void attachBaseContext(Context newBase) {
         SharedPreferences preferences = newBase.getSharedPreferences("settings", Context.MODE_PRIVATE);
