@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
-import android.view.View;
 import android.widget.Toast;
 import android.widget.EditText;
 
@@ -32,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
             String password = editPw.getText().toString().trim();
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(LoginActivity.this, "Email dan password harus diisi", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, getString(R.string.login), Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -44,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 runOnUiThread(() -> {
                     if (user != null){
-                        Toast.makeText(LoginActivity.this, "Login Berhasil!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, getString(R.string.login_berhasil), Toast.LENGTH_SHORT).show();
 
                         SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();
@@ -56,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();
                     } else {
-                        Toast.makeText(LoginActivity.this, "Email atau password salah!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                     }
                 });
             }).start();
@@ -73,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStop();
         SharedPreferences preferences = getSharedPreferences("login_pref", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("isLoggedIn", false); // Reset agar login dibutuhkan ulang
+        editor.putBoolean("isLoggedIn", false);
         editor.apply();
     }
 }

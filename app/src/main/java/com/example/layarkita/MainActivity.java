@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void attachBaseContext(Context newBase) {
         SharedPreferences preferences = newBase.getSharedPreferences("settings", Context.MODE_PRIVATE);
-        String lang = preferences.getString("language", "id"); // default bahasa Indonesia
+        String lang = preferences.getString("language", "id");
         LocalHelper.setLocale(newBase, lang);
         super.attachBaseContext(newBase);
     }

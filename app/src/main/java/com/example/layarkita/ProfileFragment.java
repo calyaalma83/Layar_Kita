@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.content.SharedPreferences;
 
-import java.util.Locale;
 
 public class  ProfileFragment extends Fragment{
 
@@ -52,7 +51,7 @@ public class  ProfileFragment extends Fragment{
         final String[] languageCodes = {"id", "en"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Pilih Bahasa")
+        builder.setTitle(getString(R.string.bahasa))
                 .setItems(languages, (dialog, which)-> {
                     String selectedCode = languageCodes[which];
                     saveLanguage(selectedCode);
@@ -60,7 +59,7 @@ public class  ProfileFragment extends Fragment{
 
                     getActivity().recreate();
                 })
-                .setNegativeButton("Batal", null)
+                .setNegativeButton(getString(R.string.batal), null)
                 .show();
     }
 

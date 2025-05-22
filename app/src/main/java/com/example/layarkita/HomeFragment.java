@@ -55,13 +55,13 @@ public class HomeFragment extends Fragment {
 
                     if (WatchListHelper.getWatchList().contains(film)) {
                         builder.setTitle("Info")
-                                .setMessage("This film already in watchlist")
+                                .setMessage(getString(R.string.tersedia))
                                 .setPositiveButton("OK", null)
                                 .show();
                     } else {
                         WatchListHelper.addToWatchList(film);
-                        builder.setTitle("Success")
-                                .setMessage("Add to watchlist")
+                        builder.setTitle(getString(R.string.success))
+                                .setMessage(getString(R.string.tambahkan))
                                 .setPositiveButton("OK", null)
                                 .show();
                     }

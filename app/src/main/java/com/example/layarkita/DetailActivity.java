@@ -42,7 +42,7 @@ public class DetailActivity extends AppCompatActivity {
                 Intent youtubeIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(trailerUrl));
                 startActivity(youtubeIntent);
             } else {
-                Toast.makeText(this, "Trailer belum tersedia", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.trailer2), Toast.LENGTH_SHORT).show();
             }
         });
 
