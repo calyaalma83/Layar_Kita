@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AkunActivity extends AppCompatActivity {
 
     private ImageButton btnBack;
-    private ImageView imgProfile;
     private TextView tvNama, tvEmail;
 
     private static final String PREF_NAME = "UserPrefs";
@@ -26,7 +25,6 @@ public class AkunActivity extends AppCompatActivity {
         setContentView(R.layout.activity_akun);
 
         btnBack = findViewById(R.id.btnBack);
-        imgProfile = findViewById(R.id.imgProfile);
         tvNama = findViewById(R.id.tvNama);
         tvEmail = findViewById(R.id.tvEmail);
 
