@@ -15,7 +15,7 @@ public class AkunActivity extends AppCompatActivity {
     private ImageButton btnBack;
     private TextView tvNama, tvEmail;
 
-    private static final String PREF_NAME = "UserPrefs";
+    private static final String PREF_NAME = "login_pref";
     private static final String KEY_NAMA = "user_name";
     private static final String KEY_EMAIL = "email";
 
