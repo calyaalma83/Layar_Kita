@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:background="@color/maroon"
             app:menu="@menu/bottom_nav_menu"
-            app:itemIconSize="35dp"
+            app:itemIconSize="40dp"
             app:itemIconTint="@color/white"
             app:itemTextColor="@color/white" />
     </LinearLayout>
