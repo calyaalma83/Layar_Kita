@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
             String password = etPassword.getText().toString().trim();
 
             if (nama.isEmpty() || email.isEmpty() || password.isEmpty()){
-                Toast.makeText(this, "Semua data harus diisi!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.data), Toast.LENGTH_SHORT).show();
             } else {
                 AppDatabase db = AppDatabase.getInstance(this);
                 UserDao userDao = db.userDao();
@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
                         editor.putBoolean("isRegistered", true);
                         editor.apply();
 
-                        Toast.makeText(this, "Berhasil mendaftar!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.mendaftar), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();

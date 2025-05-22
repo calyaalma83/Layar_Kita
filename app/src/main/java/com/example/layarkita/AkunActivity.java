@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,9 +37,9 @@ public class AkunActivity extends AppCompatActivity {
             tvNama.setText(nama);
             tvEmail.setText(email);
         } else {
-            tvNama.setText("Belum ada data nama");
-            tvEmail.setText("Belum ada data email");
-            Toast.makeText(this, "Data akun belum tersedia. Silakan registrasi dulu.", Toast.LENGTH_LONG).show();
+            tvNama.setText(getString(R.string.no_name));
+            tvEmail.setText(getString(R.string.no_email));
+            Toast.makeText(this, getString(R.string.toast), Toast.LENGTH_LONG).show();
         }
 
         btnBack.setOnClickListener(v -> finish());

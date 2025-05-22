@@ -57,9 +57,9 @@ public class WatchListFragment extends Fragment {
                 },
                 film -> {
                     new androidx.appcompat.app.AlertDialog.Builder(requireContext())
-                            .setTitle("Konfirmasi")
-                            .setMessage("Yakin ingin menghapus film dari daftar suka?")
-                            .setPositiveButton("Hapus", (dialog, which) -> {
+                            .setTitle(getString(R.string.konfirmasi2))
+                            .setMessage(getString(R.string.remove))
+                            .setPositiveButton(getString(R.string.hapus), (dialog, which) -> {
                                 WatchListHelper.removeFromWatchList(film);
 
                                 watchList.clear();
@@ -67,12 +67,12 @@ public class WatchListFragment extends Fragment {
                                 adapter.notifyDataSetChanged();
 
                                 new androidx.appcompat.app.AlertDialog.Builder(requireContext())
-                                        .setTitle("Dihapus")
-                                        .setMessage("Film berhasil dihapus dari daftar suka")
+                                        .setTitle(getString(R.string.konfhapus))
+                                        .setMessage(getString(R.string.berhasil_remove))
                                         .setPositiveButton("OK", null)
                                         .show();
                             })
-                            .setNegativeButton("Batal", null)
+                            .setNegativeButton(getString(R.string.batal), null)
                             .show();
                 });
 

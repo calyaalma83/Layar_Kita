@@ -7,6 +7,7 @@
     <string name="profile">Profil</string>
     <string name="daftar">Daftar</string>
     <string name="konfirmasi">Konfirmasi Password</string>
+    <string name="nama_akun">Nama</string>
     <string name="password">Kata Sandi</string>
     <string name="email">Email</string>
     <string name="nama">Nama Lengkap</string>
@@ -18,4 +19,24 @@
     <string name="language">🌐 Bahasa</string>
     <string name="logout">🚪 Keluar</string>
     <string name="new_account">➕ Akun Baru</string>
+    <string name="no_name">Belum ada data nama</string>
+    <string name="no_email">Belum ada data email</string>
+    <string name="toast">Data akun belum tersedia. Silahkan registrasi</string>
+    <string name="bahasa">Pilih Bahasa</string>
+    <string name="wrong">Email dan password salah!</string>
+    <string name="batal">Batal</string>
+    <string name="trailer2">Cuplikan film belum tersedia</string>
+    <string name="tersedia">Film ini sudah ada di daftar suka.</string>
+    <string name="success">Berhasil</string>
+    <string name="tambahkan">Ditambahkan ke daftar suka.</string>
+    <string name="login">Email dan kata sandi harus diisi!</string>
+    <string name="login_berhasil">Berhasl Masuk!</string>
+    <string name="data">Semua data harus diisi!</string>
+    <string name="mendaftar">Berhasil mendaftar!</string>
+    <string name="konfirmasi2">Konfirmasi</string>
+    <string name="remove">Yakin ingin menghapus film dari daftar suka?</string>
+    <string name="hapus">Hapus</string>
+    <string name="berhasil_remove">Film berhasil dihapus dari daftar suka.</string>
+    <string name="kembali">Kembali</string>
+    <string name="konfhapus">Dihapus</string>
 </resources>

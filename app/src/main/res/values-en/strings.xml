@@ -8,6 +8,7 @@
     <string name="profile">Profile</string>
     <string name="daftar">Sign Up</string>
     <string name="konfirmasi">Confirm Password</string>
+    <string name="nama_akun">Name</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="nama">Full Name</string>
@@ -19,4 +20,24 @@
     <string name="language">🌐 Language</string>
     <string name="logout">🚪 Log Out</string>
     <string name="new_account">➕ New Account</string>
+    <string name="no_name">There is no name data yet</string>
+    <string name="no_email">There is no email data yet</string>
+    <string name="toast">Account data is not available yet. Please register</string>
+    <string name="bahasa">Choose Language</string>
+    <string name="batal">Cancel</string>
+    <string name="trailer2">Trailer not yet available</string>
+    <string name="tersedia">This film is already in watchlist.</string>
+    <string name="success">Success</string>
+    <string name="tambahkan">Add to watchlist.</string>
+    <string name="login">Email and password must be filled in.!</string>
+    <string name="login_berhasil">Login Successful!</string>
+    <string name="wrong">Wrong email and password!</string>
+    <string name="data">All data must be filled in!</string>
+    <string name="mendaftar">Successfully registered!</string>
+    <string name="konfirmasi2">Confirm</string>
+    <string name="remove">Are you sure you want to remove the movie from your likes list?</string>
+    <string name="hapus">Delete</string>
+    <string name="berhasil_remove">Removed from likes list.</string>
+    <string name="kembali">Back</string>
+    <string name="konfhapus">Delete</string>
 </resources>

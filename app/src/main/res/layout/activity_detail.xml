@@ -16,7 +16,7 @@
             android:id="@+id/btnKembali"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kembali"
+            android:text="@string/kembali"
             android:backgroundTint="@color/red"
             android:textColor="@color/white"
             android:layout_marginBottom="16dp" />
