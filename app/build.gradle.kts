@@ -37,6 +37,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0")
     implementation ("androidx.room:room-runtime:2.6.1")
     implementation ("androidx.core:core-splashscreen:1.0.1")
     implementation(libs.room.common.jvm)

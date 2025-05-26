@@ -50,7 +50,6 @@
         <activity
             android:name=".AkunActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>
