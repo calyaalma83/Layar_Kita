@@ -2,38 +2,55 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Izin untuk membaca penyimpanan -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LayarKita"
         tools:targetApi="31">
+
+        <!-- Splash screen sebagai launcher -->
         <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+
+        <!-- Login Activity -->
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+
+        <!-- Register Activity -->
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
-        <activity android:name=".DetailActivity" />
-        <activity android:name=".AkunActivity" />
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:excludeFromRecents="true" />
+
+        <!-- Halaman detail film -->
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+
+        <!-- Halaman akun pengguna -->
+        <activity
+            android:name=".AkunActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

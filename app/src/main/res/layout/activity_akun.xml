@@ -51,13 +51,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:text="Nama"
             android:textSize="20dp"
             android:textStyle="bold"
-=======
-            android:text="@string/nama_akun"
->>>>>>> 2915043599fc969219eec1f9b50d7a0782ae381f
             android:textColor="@color/white" />
 
         <TextView

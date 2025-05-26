@@ -2,8 +2,15 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.LayarKita" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.LayarKita" parent="Base.Theme.LayarKita" />
+    <style name="Theme.LayarKita" parent="Base.Theme.LayarKita">
+        <!-- Kosong atau isi sesuai kebutuhan -->
+    </style>
+
+    <style name="Theme.LayarKita.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/navy</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo_apk</item>
+        <item name="postSplashScreenTheme">@style/Theme.LayarKita</item>
+    </style>
 </resources>
