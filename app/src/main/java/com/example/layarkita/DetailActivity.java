@@ -93,7 +93,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private void toggleFullscreenView(boolean fullscreen) {
         if (fullscreen) {
-            youtubePlayerView.setLayoutParams(new LinearLayout.LayoutParams(
+            youtubePlayerView.setLayoutParams(new FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT
             ));
@@ -111,6 +111,8 @@ public class DetailActivity extends AppCompatActivity {
             textTitle.setVisibility(View.GONE);
             textDesc.setVisibility(View.GONE);
             textTrailer.setVisibility(View.GONE);
+        } else {
+            youtubePlayerView.setLayoutParams(new FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     dpToPx(200)
             ));
