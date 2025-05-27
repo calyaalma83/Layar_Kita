@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class DetailActivity extends AppCompatActivity {
     ImageView imagePoster, buttonPlay, buttonFullscreen;
     TextView textTitle, textDesc, textTrailer;
     Button btnKembali;
+    FrameLayout playerContainer;
     YouTubePlayerView youtubePlayerView;
     boolean isFullscreen = false;
 
@@ -40,6 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         buttonPlay = findViewById(R.id.buttonPlay);
         buttonFullscreen = findViewById(R.id.buttonFullscreen);
         youtubePlayerView = findViewById(R.id.youtubePlayerView);
+        playerContainer = findViewById(R.id.playerContainer);
 
         getLifecycle().addObserver(youtubePlayerView);
 
@@ -64,6 +67,7 @@ public class DetailActivity extends AppCompatActivity {
                 buttonPlay.setVisibility(View.GONE);
                 youtubePlayerView.setVisibility(View.VISIBLE);
                 buttonFullscreen.setVisibility(View.VISIBLE);
+                buttonFullscreen.bringToFront();
 
                 youtubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
                     @Override
@@ -81,7 +85,7 @@ public class DetailActivity extends AppCompatActivity {
         });
 
         textTrailer.setOnClickListener(v -> {
-            Toast.makeText(this, "Gunakan tombol Play di atas poster untuk menonton trailer", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Gunakan Tombol Play Pada Poster untuk Menonton Trailer", Toast.LENGTH_SHORT).show();
         });
 
         btnKembali.setOnClickListener(v -> finish());
@@ -89,7 +93,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private void toggleFullscreenView(boolean fullscreen) {
         if (fullscreen) {
-            youtubePlayerView.setLayoutParams(new LinearLayout.LayoutParams(
+            playerContainer.setLayoutParams(new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT
             ));
@@ -98,17 +102,24 @@ public class DetailActivity extends AppCompatActivity {
             if (getSupportActionBar() != null) getSupportActionBar().hide();
 
             getWindow().getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_FULLSCREEN |
-                            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-                            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
             );
 
             btnKembali.setVisibility(View.GONE);
             textTitle.setVisibility(View.GONE);
             textDesc.setVisibility(View.GONE);
             textTrailer.setVisibility(View.GONE);
+
+            buttonFullscreen.setVisibility(View.VISIBLE);
+            buttonFullscreen.bringToFront();
+
         } else {
-            youtubePlayerView.setLayoutParams(new LinearLayout.LayoutParams(
+            playerContainer.setLayoutParams(new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     dpToPx(200)
             ));
@@ -122,8 +133,10 @@ public class DetailActivity extends AppCompatActivity {
             textTitle.setVisibility(View.VISIBLE);
             textDesc.setVisibility(View.VISIBLE);
             textTrailer.setVisibility(View.VISIBLE);
-        }
 
+            buttonFullscreen.setVisibility(View.VISIBLE);
+            buttonFullscreen.bringToFront();
+        }
         isFullscreen = fullscreen;
     }
 
