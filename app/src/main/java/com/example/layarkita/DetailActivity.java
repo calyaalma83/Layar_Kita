@@ -85,7 +85,7 @@ public class DetailActivity extends AppCompatActivity {
         });
 
         textTrailer.setOnClickListener(v -> {
-            Toast.makeText(this, "Gunakan Tombol Play Pada Poster untuk Menonton Trailer", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.tomb_play), Toast.LENGTH_SHORT).show();
         });
 
         btnKembali.setOnClickListener(v -> finish());
@@ -109,8 +109,10 @@ public class DetailActivity extends AppCompatActivity {
 
             btnKembali.setVisibility(View.GONE);
             textTitle.setVisibility(View.GONE);
-            textDesc.setVisibility(View.GONE);
-            textTrailer.setVisibility(View.GONE);>>>>>>>
+            textDesc.setText(View.GONE);
+            textTrailer.setVisibility(View.GONE);
+        } else {
+            youtubePlayerView.setLayoutParams(new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     dpToPx(200)
             ));
