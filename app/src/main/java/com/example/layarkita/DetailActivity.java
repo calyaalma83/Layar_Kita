@@ -110,7 +110,7 @@ public class DetailActivity extends AppCompatActivity {
             btnKembali.setVisibility(View.GONE);
             textTitle.setVisibility(View.GONE);
             textDesc.setVisibility(View.GONE);
-            textTrailer.setVisibility(View.GONE);>>>>>>>
+            textTrailer.setVisibility(View.GONE);
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     dpToPx(200)
             ));

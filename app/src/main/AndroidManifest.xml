@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.layarkita">
+    xmlns:tools="http://schemas.android.com/tools">
 
-<<<<<<< HEAD
     <!-- Izin untuk membaca penyimpanan -->
-=======
-    <!-- Izin akses penyimpanan -->
->>>>>>> e034db0d8a531f8b111dac791acfcc16f440a386
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:allowBackup="false"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -19,37 +16,7 @@
         android:theme="@style/Theme.LayarKita"
         tools:targetApi="31">
 
-<<<<<<< HEAD
         <!-- Splash screen sebagai launcher -->
-=======
-        <!-- AkunActivity -->
-        <activity
-            android:name=".AkunActivity"
-            android:exported="false" />
-
-        <!-- DetailActivity (untuk menonton trailer, dll) -->
-        <activity
-            android:name=".DetailActivity"
-            android:configChanges="orientation|screenSize"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-
-        <!-- RegisterActivity -->
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="true" />
-
-        <!-- LoginActivity -->
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-
-        <!-- MainActivity -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-
-        <!-- SplashActivity sebagai launcher -->
->>>>>>> e034db0d8a531f8b111dac791acfcc16f440a386
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -72,9 +39,7 @@
         <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:launchMode="singleTop"
-            android:excludeFromRecents="true" />
+            android:exported="true" />
 
         <!-- Halaman detail film -->
         <activity
@@ -85,6 +50,7 @@
         <activity
             android:name=".AkunActivity"
             android:exported="false" />
+
     </application>
 
 </manifest>
