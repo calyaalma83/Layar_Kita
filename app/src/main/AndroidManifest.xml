@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.layarkita">
 
+<<<<<<< HEAD
     <!-- Izin untuk membaca penyimpanan -->
+=======
+    <!-- Izin akses penyimpanan -->
+>>>>>>> e034db0d8a531f8b111dac791acfcc16f440a386
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -14,7 +19,37 @@
         android:theme="@style/Theme.LayarKita"
         tools:targetApi="31">
 
+<<<<<<< HEAD
         <!-- Splash screen sebagai launcher -->
+=======
+        <!-- AkunActivity -->
+        <activity
+            android:name=".AkunActivity"
+            android:exported="false" />
+
+        <!-- DetailActivity (untuk menonton trailer, dll) -->
+        <activity
+            android:name=".DetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+
+        <!-- RegisterActivity -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+
+        <!-- LoginActivity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <!-- MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <!-- SplashActivity sebagai launcher -->
+>>>>>>> e034db0d8a531f8b111dac791acfcc16f440a386
         <activity
             android:name=".SplashActivity"
             android:exported="true">

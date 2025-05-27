@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class DetailActivity extends AppCompatActivity {
     ImageView imagePoster, buttonPlay, buttonFullscreen;
     TextView textTitle, textDesc, textTrailer;
     Button btnKembali;
+    FrameLayout playerContainer;
     YouTubePlayerView youtubePlayerView;
     boolean isFullscreen = false;
 
@@ -40,6 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         buttonPlay = findViewById(R.id.buttonPlay);
         buttonFullscreen = findViewById(R.id.buttonFullscreen);
         youtubePlayerView = findViewById(R.id.youtubePlayerView);
+        playerContainer = findViewById(R.id.playerContainer);
 
         getLifecycle().addObserver(youtubePlayerView);
 
@@ -64,6 +67,7 @@ public class DetailActivity extends AppCompatActivity {
                 buttonPlay.setVisibility(View.GONE);
                 youtubePlayerView.setVisibility(View.VISIBLE);
                 buttonFullscreen.setVisibility(View.VISIBLE);
+                buttonFullscreen.bringToFront();
 
                 youtubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
                     @Override
@@ -81,7 +85,7 @@ public class DetailActivity extends AppCompatActivity {
         });
 
         textTrailer.setOnClickListener(v -> {
-            Toast.makeText(this, "Gunakan tombol Play di atas poster untuk menonton trailer", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Gunakan Tombol Play Pada Poster untuk Menonton Trailer", Toast.LENGTH_SHORT).show();
         });
 
         btnKembali.setOnClickListener(v -> finish());
@@ -106,9 +110,7 @@ public class DetailActivity extends AppCompatActivity {
             btnKembali.setVisibility(View.GONE);
             textTitle.setVisibility(View.GONE);
             textDesc.setVisibility(View.GONE);
-            textTrailer.setVisibility(View.GONE);
-        } else {
-            youtubePlayerView.setLayoutParams(new LinearLayout.LayoutParams(
+            textTrailer.setVisibility(View.GONE);>>>>>>>
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     dpToPx(200)
             ));
@@ -123,7 +125,6 @@ public class DetailActivity extends AppCompatActivity {
             textDesc.setVisibility(View.VISIBLE);
             textTrailer.setVisibility(View.VISIBLE);
         }
-
         isFullscreen = fullscreen;
     }
 
