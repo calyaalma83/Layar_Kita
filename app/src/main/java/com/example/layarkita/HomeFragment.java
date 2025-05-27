@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
                     intent.putExtra("title", film.getTitle());
                     intent.putExtra("image", film.getPosterResId());
                     intent.putExtra("desc", film.getDescription());
-                    intent.putExtra("trailer", film.getTrailerUrl() != null ? film.getTrailerUrl() : "");
+                    intent.putExtra("trailer", film.getTrailerUrl());
                     startActivity(intent);
                 },
                 film -> {

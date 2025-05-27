@@ -29,8 +29,6 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Request fullscreen before layout
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_detail);
 
@@ -79,65 +77,58 @@ public class DetailActivity extends AppCompatActivity {
         });
 
         buttonFullscreen.setOnClickListener(v -> {
-            if (!isFullscreen) {
-                youtubePlayerView.setLayoutParams(new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT
-                ));
-
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
-                if (getSupportActionBar() != null) {
-                    getSupportActionBar().hide();
-                }
-
-                getWindow().getDecorView().setSystemUiVisibility(
-                        View.SYSTEM_UI_FLAG_FULLSCREEN |
-                                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-                                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                );
-
-                btnKembali.setVisibility(View.GONE);
-                textTitle.setVisibility(View.GONE);
-                textDesc.setVisibility(View.GONE);
-                textTrailer.setVisibility(View.GONE);
-
-                isFullscreen = true;
-            } else {
-                youtubePlayerView.setLayoutParams(new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        dpToPx(200)
-                ));
-
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-                if (getSupportActionBar() != null) {
-                    getSupportActionBar().show();
-                }
-
-                getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-
-                btnKembali.setVisibility(View.VISIBLE);
-                textTitle.setVisibility(View.VISIBLE);
-                textDesc.setVisibility(View.VISIBLE);
-                textTrailer.setVisibility(View.VISIBLE);
-
-                isFullscreen = false;
-            }
+            toggleFullscreenView(!isFullscreen);
         });
 
         textTrailer.setOnClickListener(v -> {
             Toast.makeText(this, "Gunakan tombol Play di atas poster untuk menonton trailer", Toast.LENGTH_SHORT).show();
         });
 
-        btnKembali.setOnClickListener(v -> {
-            finish();
-        });
+        btnKembali.setOnClickListener(v -> finish());
+    }
+
+    private void toggleFullscreenView(boolean fullscreen) {
+        if (fullscreen) {
+            youtubePlayerView.setLayoutParams(new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT
+            ));
+
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            if (getSupportActionBar() != null) getSupportActionBar().hide();
+
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_FULLSCREEN |
+                            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+            );
+
+            btnKembali.setVisibility(View.GONE);
+            textTitle.setVisibility(View.GONE);
+            textDesc.setVisibility(View.GONE);
+            textTrailer.setVisibility(View.GONE);
+        } else {
+            youtubePlayerView.setLayoutParams(new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    dpToPx(200)
+            ));
+
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            if (getSupportActionBar() != null) getSupportActionBar().show();
+
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+
+            btnKembali.setVisibility(View.VISIBLE);
+            textTitle.setVisibility(View.VISIBLE);
+            textDesc.setVisibility(View.VISIBLE);
+            textTrailer.setVisibility(View.VISIBLE);
+        }
+
+        isFullscreen = fullscreen;
     }
 
     private String extractYoutubeVideoId(String url) {
         String videoId = "";
-
         if (url.contains("v=")) {
             videoId = url.substring(url.indexOf("v=") + 2);
             int ampIndex = videoId.indexOf("&");
@@ -151,10 +142,8 @@ public class DetailActivity extends AppCompatActivity {
                 videoId = videoId.substring(0, queryIndex);
             }
         }
-
         return videoId;
     }
-
 
     private int dpToPx(int dp) {
         float density = getResources().getDisplayMetrics().density;
