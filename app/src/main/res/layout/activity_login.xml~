@@ -28,12 +28,12 @@
             android:text="@string/app_name"
             android:textSize="50sp"
             android:textStyle="bold"
-            android:textColor="@color/red2" />
+            android:textColor="@color/red" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="150dp"
             android:layout_marginStart="15dp"
             android:text="Login"
             android:textSize="25sp"
@@ -49,7 +49,7 @@
             android:layout_marginRight="15dp"
             android:hint="Enter Email"
             android:padding="10dp"
-            android:background="@color/dark_grey" />
+            android:background="@color/abu" />
 
         <EditText
             android:id="@+id/editPw"
@@ -61,7 +61,7 @@
             android:hint="Enter Password"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:background="@color/dark_grey" />
+            android:background="@color/abu" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"
