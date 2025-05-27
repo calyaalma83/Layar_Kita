@@ -85,7 +85,7 @@ public class DetailActivity extends AppCompatActivity {
         });
 
         textTrailer.setOnClickListener(v -> {
-            Toast.makeText(this, "Gunakan Tombol Play Pada Poster untuk Menonton Trailer", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.tomb_play), Toast.LENGTH_SHORT).show();
         });
 
         btnKembali.setOnClickListener(v -> finish());
