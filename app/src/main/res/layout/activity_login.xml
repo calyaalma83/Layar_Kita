@@ -1,79 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- activity_login.xml -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/backg_login"
-    tools:context=".LoginActivity">
+    android:background="#0D0D1A"
+    android:fillViewport="true">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="70dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/backg_kotak">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center">
 
-        <TextView
-            android:id="@+id/textApp"
+        <!-- Login Form Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="15dp"
-            android:text="@string/app_name"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:textColor="@color/red2" />
+            android:layout_marginTop="48dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#1A1A2E"
+            app:cardElevation="8dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/login_card_border">
+
+                <!-- App Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Layar Kita"
+                    android:textColor="#00E5FF"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Subtitle -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sudah punya akun? Silahkan masuk!"
+                    android:textColor="#9CA3AF"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="24dp"/>
+
+                <!-- Email atau Username Field -->
+                <EditText
+                    android:id="@+id/etLoginEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/input_field_cyan_border"
+                    android:hint="Email atau Username"
+                    android:textColorHint="#6B7280"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Password Field -->
+                <EditText
+                    android:id="@+id/etLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/input_field_cyan_border"
+                    android:hint="Password"
+                    android:textColorHint="#6B7280"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Masuk Button -->
+                <Button
+                    android:id="@+id/btnMasuk"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_masuk_gradient"
+                    android:text="Masuk"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Masuk dengan Google Button -->
+                <Button
+                    android:id="@+id/btnMasukGoogle"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_google_background"
+                    android:text="Masuk dengan Google"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textAllCaps="false"
+                    android:drawableStart="@drawable/ic_google"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Register Link -->
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tvRegisterLink"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
-            android:layout_marginStart="15dp"
-            android:text="Login"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:textColor="@color/white" />
+            android:text="Belum punya akun? Daftar dulu ya!"
+            android:textColor="#FF00FF"
+            android:textSize="14sp"
+            android:layout_marginTop="24dp"
+            android:clickable="true"
+            android:focusable="true"/>
 
-        <EditText
-            android:id="@+id/editEmail"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="210dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:hint="Enter Email"
-            android:padding="10dp"
-            android:background="@color/dark_grey" />
-
-        <EditText
-            android:id="@+id/editPw"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="280dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:hint="Enter Password"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:background="@color/dark_grey" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="380dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="Log In"
-            android:textSize="20sp"
-            android:background="@drawable/button_in"
-            android:backgroundTint="@null" />
-
-    </FrameLayout>
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

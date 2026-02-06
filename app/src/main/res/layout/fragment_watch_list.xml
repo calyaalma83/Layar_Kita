@@ -1,25 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- res/layout/fragment_watchlist.xml -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@color/black"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0D0D1A"
+    android:fillViewport="true"
     tools:context=".WatchListFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/watchlist"
-        android:layout_margin="16dp"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerWatchList"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</LinearLayout>
+        <!-- Header Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WatchList"
+            android:textColor="#00E5FF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Statistics Cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp"
+            android:weightSum="3">
+
+            <!-- Film Tersimpan -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#1A1A2E"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:background="@drawable/stat_card_cyan_border">
+
+                    <TextView
+                        android:id="@+id/tvTotalFilm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12"
+                        android:textColor="#00E5FF"
+                        android:textSize="24sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Film\nTersimpan"
+                        android:textColor="#00E5FF"
+                        android:textSize="11sp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="2dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Sudah Ditonton -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#1A1A2E"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:background="@drawable/stat_card_green_border">
+
+                    <TextView
+                        android:id="@+id/tvSudahDitonton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:textColor="#00FF7F"
+                        android:textSize="24sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sudah\nDitonton"
+                        android:textColor="#00FF7F"
+                        android:textSize="11sp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="2dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Belum Ditonton -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#1A1A2E"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:background="@drawable/stat_card_magenta_border">
+
+                    <TextView
+                        android:id="@+id/tvBelumDitonton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9"
+                        android:textColor="#FF00FF"
+                        android:textSize="24sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Belum\nDitonton"
+                        android:textColor="#FF00FF"
+                        android:textSize="11sp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="2dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- Watchlist Items -->
+        <LinearLayout
+            android:id="@+id/watchlistContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Item 1 - Spider-Man -->
+            <include
+                layout="@layout/item_watchlist_movie"
+                android:id="@+id/watchlistItem1"/>
+
+            <!-- Item 2 - Avatar -->
+            <include
+                layout="@layout/item_watchlist_movie"
+                android:id="@+id/watchlistItem2"/>
+
+            <!-- Item 3 - Dune -->
+            <include
+                layout="@layout/item_watchlist_movie"
+                android:id="@+id/watchlistItem3"/>
+
+            <!-- Item 4 - Top Gun -->
+            <include
+                layout="@layout/item_watchlist_movie"
+                android:id="@+id/watchlistItem4"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

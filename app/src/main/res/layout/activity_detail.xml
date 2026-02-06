@@ -1,89 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- activity_detail_movie.xml -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:background="#0D0D1A"
+    android:fillViewport="true">
 
-    <Button
-        android:id="@+id/btnKembali"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/kembali"
-        android:backgroundTint="@color/red"
-        android:textColor="@color/white"
-        android:layout_marginBottom="10dp" />
-
-    <FrameLayout
-        android:id="@+id/playerContainer"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="10dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/imagePoster"
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/btn_back_circle"
+            android:src="@drawable/ic_arrow_back"
+            android:scaleType="centerInside"
+            android:padding="8dp"
+            app:tint="#00E5FF"
+            android:contentDescription="Back"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Video Thumbnail Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:background="@drawable/bg_film_border" />
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="#1A1A2E"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
 
-        <ImageView
-            android:id="@+id/buttonPlay"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_play_circle"
-            android:contentDescription="Play Video"
-            app:tint="@color/white" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/video_thumbnail_border">
 
-        <ImageView
-            android:id="@+id/buttonFullscreen"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_gravity="top|end"
-            android:layout_margin="5dp"
-            android:src="@drawable/ic_fullscreen"
-            android:contentDescription="Fullscreen"
-            app:tint="@color/white"
-            android:visibility="gone" />
+                <!-- Video Thumbnail Image -->
+                <ImageView
+                    android:id="@+id/ivVideoThumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="#2D2D44"/>
 
-        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/youtubePlayerView"
+                <!-- Play Button Overlay -->
+                <ImageButton
+                    android:id="@+id/btnPlayVideo"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_play_circle"
+                    android:src="@drawable/ic_play_arrow"
+                    android:scaleType="centerInside"
+                    android:padding="16dp"
+                    app:tint="#FFFFFF"
+                    android:contentDescription="Play Video"/>
+
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Movie Title -->
+        <TextView
+            android:id="@+id/tvMovieTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Avatar: The Way of Water"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <!-- Genre, Year, Duration -->
+        <TextView
+            android:id="@+id/tvMovieInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action, Adventure, Sci-Fi • 2022 • 3h 12m"
+            android:textColor="#9CA3AF"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Rating -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_star"
+                app:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_star"
+                app:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_star"
+                app:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_star"
+                app:tint="#FFD700"/>
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_star_half"
+                app:tint="#FFD700"/>
+
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8.5/10"
+                android:textColor="#FFD700"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+        <!-- Sinopsis Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sinopsis"
+            android:textColor="#00E5FF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvSinopsis"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:visibility="gone"/>
-    </FrameLayout>
+            android:layout_height="wrap_content"
+            android:text="Jake Sully dan keluarga barunya hidup di bulan Pandora. Ketika ancaman lama kembali, Jake harus bekerja sama dengan Neytiri dan ras Na'vi untuk melindungi rumah mereka dari musuh yang lebih kuat dari sebelumnya."
+            android:textColor="#9CA3AF"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="24dp"/>
 
-    <TextView
-        android:id="@+id/textTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textColor="@color/red"
-        android:textStyle="bold"
-        android:paddingTop="16dp" />
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/textDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:paddingTop="12dp" />
+            <!-- Tonton Sekarang Button -->
+            <Button
+                android:id="@+id/btnTontonSekarang"
+                android:layout_width="220dp"
+                android:layout_height="48dp"
+                android:background="@drawable/btn_tonton_gradient"
+                android:text="Tonton Sekarang"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:drawableStart="@drawable/ic_play_arrow"
+                android:drawablePadding="8dp"
+                android:drawableTint="#FFFFFF"
+                android:layout_marginBottom="12dp"/>
 
-    <TextView
-        android:id="@+id/textTrailer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/trailer"
-        android:textColor="@color/red"
-        android:textStyle="bold"
-        android:paddingTop="16dp"
-        android:clickable="true" />
+            <!-- Tambah ke Watchlist Button -->
+            <Button
+                android:id="@+id/btnTambahWatchlist"
+                android:layout_width="220dp"
+                android:layout_height="48dp"
+                android:background="@drawable/btn_watchlist_outline"
+                android:text="+ Tambah ke Watchlist"
+                android:textColor="#00E5FF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"/>
 
-</LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

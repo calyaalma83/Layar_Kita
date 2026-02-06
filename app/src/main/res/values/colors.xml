@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Primary Colors -->
+    <color name="background_dark">#0D0D1A</color>
+    <color name="card_background">#1A1A2E</color>
+    <color name="surface_dark">#2D2D44</color>
+
+    <!-- Accent Colors -->
+    <color name="cyan_primary">#00E5FF</color>
+    <color name="magenta_accent">#FF00FF</color>
+    <color name="purple_accent">#9D4EDD</color>
+    <color name="teal_accent">#00BFA5</color>
+
+    <!-- Status Colors -->
+    <color name="green_watched">#00FF7F</color>
+    <color name="red_delete">#FF4D6D</color>
+    <color name="gold_star">#FFD700</color>
+    <color name="orange_security">#FF9500</color>
+    <color name="blue_info">#007AFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#9CA3AF</color>
+    <color name="text_hint">#6B7280</color>
+
+    <!-- Border Colors -->
+    <color name="border_subtle">#2D2D44</color>
+    <color name="border_input">#4B5563</color>
+
+    <!-- yang lama -->
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="red">#8A2D3B</color>

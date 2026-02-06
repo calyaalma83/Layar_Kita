@@ -1,88 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- activity_edit_akun.xml -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    android:padding="16dp">
+    android:background="#0D0D1A"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <!-- Tombol Back -->
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_back"
-            android:contentDescription="Kembali" />
-
-        <!-- Spacer -->
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
-
-        <!-- Foto Profil -->
+        <!-- Header with Back Button -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
 
-            <ImageView
-                android:id="@+id/imgProfile"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/ic_profile"
-                android:scaleType="centerCrop"
-                android:contentDescription="Foto Profil"
-                app:tint="@color/abu" />
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="#00E5FF"
+                android:contentDescription="Back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Akun"
+                android:textColor="#00E5FF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"/>
+
         </LinearLayout>
 
-        <!-- Spacer -->
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="32dp" />
-
-        <!-- Nama -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nama"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/tvNama"
+        <!-- Form Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:paddingVertical="8dp" />
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#1A1A2E"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
 
-        <!-- Email -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:layout_marginTop="16dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@drawable/form_card_border">
 
+                <!-- Username Field -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textColor="#00E5FF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <EditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/input_field_background"
+                    android:hint="Masukkan username baru"
+                    android:textColorHint="#6B7280"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Email Field -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="#00E5FF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/input_field_background"
+                    android:hint="Masukkan email baru"
+                    android:textColorHint="#6B7280"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Konfirmasi Password Lama Field -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Konfirmasi Password Lama"
+                    android:textColor="#00E5FF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <EditText
+                    android:id="@+id/etPasswordLama"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/input_field_background"
+                    android:hint="********"
+                    android:textColorHint="#6B7280"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="24dp"/>
+
+                <!-- Simpan Perubahan Button -->
+                <Button
+                    android:id="@+id/btnSimpanPerubahan"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_save_gradient_background"
+                    android:text="Simpan Perubahan"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Helper Text -->
         <TextView
-            android:id="@+id/tvEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:paddingVertical="8dp" />
+            android:text="Masukkan password lama untuk mengonfirmasi perubahan"
+            android:textColor="#00E5FF"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"/>
 
     </LinearLayout>
 </ScrollView>

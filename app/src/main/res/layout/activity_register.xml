@@ -1,85 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- activity_register.xml -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".RegisterActivity">
+    android:background="#0D0D1A"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:layout_gravity="center_horizontal" >
+        android:padding="16dp"
+        android:gravity="center">
 
+        <!-- Register Form Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#1A1A2E"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/register_card_border">
+
+                <!-- App Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Layar Kita"
+                    android:textColor="#00E5FF"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Subtitle -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum punya akun? Daftar dulu ya!"
+                    android:textColor="#9CA3AF"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="24dp"/>
+
+                <!-- Username Field -->
+                <EditText
+                    android:id="@+id/etRegisterUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/input_field_cyan_border"
+                    android:hint="Username"
+                    android:textColorHint="#6B7280"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="text"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Email Field -->
+                <EditText
+                    android:id="@+id/etRegisterEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/input_field_cyan_border"
+                    android:hint="Alamat Email"
+                    android:textColorHint="#6B7280"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Password Field -->
+                <EditText
+                    android:id="@+id/etRegisterPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/input_field_cyan_border"
+                    android:hint="Password"
+                    android:textColorHint="#6B7280"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Konfirmasi Password Field -->
+                <EditText
+                    android:id="@+id/etRegisterKonfirmasiPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/input_field_cyan_border"
+                    android:hint="Konfirmasi Password"
+                    android:textColorHint="#6B7280"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Daftar Button -->
+                <Button
+                    android:id="@+id/btnDaftar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_daftar_gradient"
+                    android:text="Daftar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Daftar dengan Google Button -->
+                <Button
+                    android:id="@+id/btnDaftarGoogle"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_google_background"
+                    android:text="Daftar dengan Google"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textAllCaps="false"
+                    android:drawableStart="@drawable/ic_google"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Login Link -->
         <TextView
+            android:id="@+id/tvLoginLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Daftar Akun"
-            android:textSize="24sp"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="24dp" />
-
-        <EditText
-            android:id="@+id/etNama"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/nama"
-            android:background="@drawable/edit_text_bg"
-            android:paddingHorizontal="16dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/gray"
-            android:layout_marginBottom="16dp" />
-
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/email"
-            android:background="@drawable/edit_text_bg"
-            android:paddingHorizontal="16dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/gray"
-            android:inputType="textEmailAddress"
-            android:layout_marginBottom="16dp" />
-
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/password"
-            android:background="@drawable/edit_text_bg"
-            android:paddingHorizontal="16dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/gray"
-            android:inputType="textPassword"
-            android:layout_marginBottom="16dp" />
-
-        <EditText
-            android:id="@+id/etKonfirmasiPassword"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/konfirmasi"
-            android:background="@drawable/edit_text_bg"
-            android:paddingHorizontal="16dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/gray"
-            android:inputType="textPassword"
-            android:layout_marginBottom="24dp" />
-
-        <Button
-            android:id="@+id/btnDaftar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="@string/daftar"
-            android:textAllCaps="false"
-            android:backgroundTint="#D90429"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp" />
+            android:text="Sudah punya akun? Masuk disini ya!"
+            android:textColor="#FF00FF"
+            android:textSize="14sp"
+            android:layout_marginTop="24dp"
+            android:clickable="true"
+            android:focusable="true"/>
 
     </LinearLayout>
 </ScrollView>

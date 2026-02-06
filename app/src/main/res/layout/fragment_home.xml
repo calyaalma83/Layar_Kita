@@ -1,27 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- res/layout/fragment_home.xml -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@color/black"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WatchListFragment">
+    android:background="#0D0D1A"
+    android:fillViewport="true"
+    tools:context=".HomeFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/trending"
-        android:layout_margin="10dp"
-        android:paddingTop="10dp"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerFilm"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        tools:listitem="@layout/item_film" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</LinearLayout>
+        <!-- Header Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Layar Kita"
+            android:textColor="#00E5FF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/search_background"
+            android:hint="Cari film favorit kamu..."
+            android:textColorHint="#6B7280"
+            android:textColor="#FFFFFF"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Featured Movie Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#1A1A2E"
+            android:layout_marginBottom="24dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <!-- Movie Poster -->
+                <ImageView
+                    android:id="@+id/featuredPoster"
+                    android:layout_width="100dp"
+                    android:layout_height="140dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/poster_placeholder"
+                    app:srcCompat="@drawable/avatar_poster"
+                    android:contentDescription="Featured movie poster"/>
+
+                <!-- Movie Info -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:id="@+id/featuredTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Avatar: The Way of Water"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end"/>
+
+                    <!-- Rating -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_star"
+                            app:tint="#FFD700"
+                            android:contentDescription="Star"/>
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_star"
+                            app:tint="#FFD700"
+                            android:contentDescription="Star"/>
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_star"
+                            app:tint="#FFD700"
+                            android:contentDescription="Star"/>
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_star"
+                            app:tint="#FFD700"
+                            android:contentDescription="Star"/>
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_star_half"
+                            app:tint="#FFD700"
+                            android:contentDescription="Half star"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8.5/10"
+                            android:textColor="#FF00FF"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                    <!-- Genre & Year -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Action, Adventure, Sci-Fi • 2022"
+                        android:textColor="#9CA3AF"
+                        android:textSize="12sp"
+                        android:layout_marginTop="4dp"/>
+
+                    <!-- Watch Button -->
+                    <Button
+                        android:id="@+id/btnWatch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/btn_watch_background"
+                        android:text="▶ Tonton Sekarang"
+                        android:textColor="#000000"
+                        android:textSize="12sp"
+                        android:textAllCaps="false"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Popular Movies Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular Movies"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Movies Grid -->
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:columnCount="2"
+            app:rowCount="2"
+            app:useDefaultMargins="true">
+
+            <!-- Movie Card 1 - Dune -->
+            <include
+                layout="@layout/item_movie_card"
+                android:id="@+id/movie1"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"/>
+
+            <!-- Movie Card 2 - Spider-Man -->
+            <include
+                layout="@layout/item_movie_card"
+                android:id="@+id/movie2"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"/>
+
+            <!-- Movie Card 3 - Top Gun -->
+            <include
+                layout="@layout/item_movie_card"
+                android:id="@+id/movie3"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"/>
+
+            <!-- Movie Card 4 - The Batman -->
+            <include
+                layout="@layout/item_movie_card"
+                android:id="@+id/movie4"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"/>
+
+        </androidx.gridlayout.widget.GridLayout>
+
+    </LinearLayout>
+</ScrollView>
